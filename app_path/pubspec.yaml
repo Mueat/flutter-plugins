@@ -1,7 +1,7 @@
 name: app_path
-description: A new Flutter plugin project.
+description: Find application path
 version: 0.0.1
-homepage:
+homepage: https://github.com/Mueat/flutter-plugins
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
