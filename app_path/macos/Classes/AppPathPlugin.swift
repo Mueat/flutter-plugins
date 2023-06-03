@@ -15,13 +15,8 @@ public class AppPathPlugin: NSObject, FlutterPlugin {
     }
     switch call.method {
     case "getAppPath":
-      let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: message)
+      let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: message ?? "")
       result(url?.path ?? "")
-    case "openApp":
-      let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: message)
-      if url != nil {
-          NSWorkspace.shared.open(url!)
-      }
     default:
       result(FlutterMethodNotImplemented)
     }

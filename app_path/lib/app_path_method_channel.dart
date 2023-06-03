@@ -11,10 +11,12 @@ class MethodChannelAppPath extends AppPathPlatform {
 
   @override
   Future<String?> getAppPath(String identifier) async {
+    if (identifier == "") {
+      return "";
+    }
     final Map<String, dynamic> params = {
       "message": identifier
     };
-    final version = await methodChannel.invokeMethod<String>('getAppPath', params);
-    return version;
+    return await methodChannel.invokeMethod<String>('getAppPath', params);
   }
 }
